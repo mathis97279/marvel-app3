@@ -44,5 +44,10 @@
       "/src/index.js",
       "/src/reportWebVitals.js"
     ]
-  }
+  },    
+    "moduleNameMapper":{
+    "d3":"<root>ir>/node_modules/d3/dist/d3.min.js"
+    }
+    
+  
 }
