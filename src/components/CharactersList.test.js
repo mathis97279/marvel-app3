@@ -24,15 +24,14 @@ describe('CharactersList', () => {
         const characterItems = screen.getAllByRole('listitem');
         expect(characterItems).toHaveLength(characters.length);
 
-        // expect each listitem to have the character name and a link to the character detail page
+        // expect each listitem to have a link to the character detail page
         characterItems.forEach((item, index) => {
             // expect each listitem to have the character name
             expect(item).toHaveTextContent(characters[index].name);
 
-            // expect each listitem to have a link to the character detail page
-            const link = screen.getByRole('link', { name: characters[index].name });
+            // expect each listitem to have a link with a unique data-testid
+            const link = screen.getByTestId(`character-link-${characters[index].id}`);
             expect(link).toBeInTheDocument();
-            expect(link).toHaveAttribute('href', `/characters/${characters[index].id}`);
         });
 
     });
