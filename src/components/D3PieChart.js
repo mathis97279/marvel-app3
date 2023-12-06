@@ -128,3 +128,4 @@ D3PieChart.propTypes = {
         fighting: PropTypes.number,
     }),
 };
+
